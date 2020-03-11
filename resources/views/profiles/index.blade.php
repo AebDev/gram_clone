@@ -5,7 +5,10 @@
    <div class="row pt-5">
        <div class="col-4"><img src="\img\index.jpg" class="rounded-circle m-5" alt="profile"></div>
        <div class="col-8 mt-5">
-       <div><h1>{{$user->username}}</h1></div>
+       <div class="d-flex justify-content-between align-items-baseline">
+           <h1>{{$user->username}}</h1>
+           <a href="\p\create">new post</a>
+       </div>
        <div class="d-flex">
            <div class="pr-3"><strong>153</strong> posts</div>
            <div class="px-3"><strong>23k</strong> folowers</div>
