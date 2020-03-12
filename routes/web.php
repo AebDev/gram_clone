@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::patch('/profile/{user}','ProfileController@update')->name('profile.update');
+
+Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
 
 Route::post('/p','PostsController@store')->name('post.store');
 
