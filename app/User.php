@@ -47,6 +47,7 @@ class User extends Authenticatable
         static::created(function ($user) {
             $user->profile()->create([
                 'title' => $user->username,
+                'image' => 'profile/uMeJZ4YoC4fcaWj0V91FgTmz54chb4NUf8hSuSae.png',
             ]);
         });
     }

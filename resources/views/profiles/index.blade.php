@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
    <div class="row pt-5">
-       <div class="col-4"><img src="/storage/{{$user->profile->image}}" class="rounded-circle m-5 w-75" alt="profile"></div>
+       <div class="col-4"><img src="/storage/{{$user->profile->picture()}}" class="rounded-circle m-5 w-75" alt="profile"></div>
        <div class="col-8 mt-5">
        <div class="d-flex justify-content-between align-items-baseline">
            <h1>{{$user->username}}</h1>
@@ -13,10 +13,12 @@
            
        </div>
        @can('update', $user->profile)
-       <a href="\profile\{{$user->id}}\edit">edit profile</a>
+       <a class="btn btn-secondary text-none text-white" href="\profile\{{$user->id}}\edit">edit profile</a>
+       @else
+       <a class="btn btn-primary text-none text-white" href="\profile\{{$user->id}}\edit">Follow</a>
        @endcan
     
-       <div class="d-flex">
+       <div class="d-flex pt-3">
        <div class="pr-3"><strong>{{$user->posts->count()}}</strong> posts</div>
            <div class="px-3"><strong>23k</strong> folowers</div>
            <div class="pl-3"><strong>212</strong> folowing</div>
