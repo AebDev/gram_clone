@@ -13,8 +13,9 @@ class ProfileController extends Controller
     {
         
         $user = User::findOrFail($user);
-        $follows = (auth()->user()) ? auth()->user()->following->contains($user) : FALSE;
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : FALSE;
 
+        
         $postCount = Cache::remember(
             'count.posts.'.$user->id,
             now()->addSeconds(30),
