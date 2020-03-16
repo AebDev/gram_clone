@@ -15,13 +15,13 @@
        @can('update', $user->profile)
        <a class="btn btn-secondary text-none text-white" href="\profile\{{$user->id}}\edit">edit profile</a>
        @else
-       <a class="btn btn-primary text-none text-white" href="\profile\{{$user->id}}\edit">Follow</a>
+    <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
        @endcan
     
        <div class="d-flex pt-3">
        <div class="pr-3"><strong>{{$user->posts->count()}}</strong> posts</div>
-           <div class="px-3"><strong>23k</strong> folowers</div>
-           <div class="pl-3"><strong>212</strong> folowing</div>
+           <div class="px-3"><strong>{{ $user->profile->followers->count()}}</strong> folowers</div>
+           <div class="pl-3"><strong>{{$user->following->count()}}</strong> folowing</div>
        </div>
     <div class="pt-4 font-weight-bold">{{$user->profile->title}}</div>
     <div>{{$user->profile->description}}</div>
