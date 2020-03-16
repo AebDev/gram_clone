@@ -19,9 +19,9 @@
        @endcan
     
        <div class="d-flex pt-3">
-       <div class="pr-3"><strong>{{$user->posts->count()}}</strong> posts</div>
-           <div class="px-3"><strong>{{ $user->profile->followers->count()}}</strong> folowers</div>
-           <div class="pl-3"><strong>{{$user->following->count()}}</strong> folowing</div>
+       <div class="pr-3"><strong>{{$postCount}}</strong> posts</div>
+           <div class="px-3"><strong>{{$followersCount}}</strong> folowers</div>
+           <div class="pl-3"><strong>{{$followingCount}}</strong> folowing</div>
        </div>
     <div class="pt-4 font-weight-bold">{{$user->profile->title}}</div>
     <div>{{$user->profile->description}}</div>
@@ -35,7 +35,7 @@
     <a href="/p/{{$post->id}}"><img src="/storage/{{$post->image}}" class="w-100" alt=""></a>
     </div>
    @endforeach
-      
+     
    </div>
 </div>
 @endsection
